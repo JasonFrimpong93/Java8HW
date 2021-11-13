@@ -120,7 +120,31 @@ public class MavJ8 {
 		System.out.println("Salary is " + topSalary.getSalary());
 
 		System.out.println("end of Question 3------------------------------------------");
+		
+		System.out.println("Employees in CS");
+		
+		empList.stream().filter(e->e.getDept().equals("CS")).collect(Collectors.toList()).forEach(e -> System.out.println(e.getName()));
+	
+		System.out.println("\nNames of Mechanical employees:");
+		
+		empList.stream().filter(e -> e.getDept().equals("Mechanical")).collect(Collectors.toList())
+		.forEach(e -> System.out.println(e.getName()));
+		
+		System.out.println("end of Question 10------------------------------------------");
 
+		System.out.println("Younger than 30:");
+		empList.stream().filter(e -> e.getAge()<30).collect(Collectors.toList())
+		.forEach(e -> System.out.println(e.getName()));
+		
+		System.out.println("\nEmployees older than 30:");
+		
+		empList.stream().filter(e -> e.getAge() >= 30).collect(Collectors.toList())
+		.forEach(e -> System.out.println(e.getName()));
+		
+		
+		System.out.println("end of Question 9------------------------------------------");
+
+		
 	}
 
 	
